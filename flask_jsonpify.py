@@ -26,7 +26,7 @@ def __dumps(*args, **kwargs):
     if (current_app.config.get('JSONIFY_PRETTYPRINT_REGULAR', False) and
             not request.is_xhr):
         indent = 2
-    return json.dumps(args[0] if len(args) is 1 else dict(*args, **kwargs),
+    return json.dumps(args[0] if len(args) == 1 else dict(*args, **kwargs),
                       indent=indent)
 
 
